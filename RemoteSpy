@@ -4,8 +4,8 @@
     SimpleSpy is a lightweight penetration testing tool that logs remote calls.
 
     Credits:
-        Klair - basically everything
-        Klair - GUI to Lua
+        exx - basically everything
+        Frosty - GUI to Lua
 ]]
 
 -- shuts down the previous instance of SimpleSpy
@@ -54,11 +54,11 @@ local TextLabel = Instance.new("TextLabel")
 
 --Properties:
 
-SimpleSpy2.Name = "KlairSpy"
+SimpleSpy2.Name = "SimpleSpy2"
 SimpleSpy2.ResetOnSpawn = false
 
 Background.Name = "Background"
-Background.Parent = KlairSpy
+Background.Parent = SimpleSpy2
 Background.BackgroundColor3 = Color3.new(1, 1, 1)
 Background.BackgroundTransparency = 1
 Background.Position = UDim2.new(0, 500, 0, 200)
