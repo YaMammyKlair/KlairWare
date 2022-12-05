@@ -271,12 +271,4 @@ Section:NewButton("Infinite Yield", "Opens Infinite Yield", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
 end)
-Section:NewButton("Auto Name Removal", "Removes Your Username", function()
-        print("Clicked")
-local P = game.Players.LocalPlayer
-while wait() do
-if P.Character and P.Character.Head.Username then
-P.Character.Head.Username:Destroy()
-
-end)
 local Section = Tab:NewSection("Made by Klair#4497")
