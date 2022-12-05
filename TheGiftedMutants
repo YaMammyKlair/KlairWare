@@ -1,0 +1,274 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local colors = {
+    SchemeColor = Color3.fromRGB(0,255,117),
+    Background = Color3.fromRGB(255,255,255),
+    Header = Color3.fromRGB(255,69,69),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(255,69,69)
+}
+local Window = Library.CreateLib("The Gifted Mutants", colors)
+local Tab = Window:NewTab("Main Menu")
+local Section = Tab:NewSection("Gamepasses")
+Section:NewButton("Unlock All Gamepass Characters", "Unlocks All Characters", function()
+        print("Clicked")
+    game.Players.LocalPlayer.UserId = "893456608"
+end)
+local Section = Tab:NewSection("Characters")
+Section:NewButton("Agatha", "Unlocks Agatha Harkness", function()
+        print("Clicked")
+local args = {
+    [1] = "AgathaHarkness"
+}
+
+game:GetService("ReplicatedStorage").Events.DeployCharacter:FireServer(unpack(args))
+
+
+end)
+Section:NewButton("Wiccan", "Unlocks Wiccan", function()
+        print("Clicked")
+local args = {
+    [1] = "Wiccan"
+}
+
+game:GetService("ReplicatedStorage").Events.DeployCharacter:FireServer(unpack(args))
+
+
+
+end)
+Section:NewButton("Jean Grey: Dark Phoenix", "Unlocks Dark Phoenix", function()
+        print("Clicked")
+local args = {
+    [1] = "Jean Grey: Dark Phoenix"
+}
+
+game:GetService("ReplicatedStorage").Events.DeployCharacter:FireServer(unpack(args))
+
+
+
+
+end)
+Section:NewButton("838 Wanda", "Unlocks 838 Wanda", function()
+        print("Clicked")
+local args = {
+    [1] = "Wanda Maximoff: Earth 838"
+}
+
+game:GetService("ReplicatedStorage").Events.DeployCharacter:FireServer(unpack(args))
+
+
+
+
+
+end)
+local Tab = Window:NewTab("Combat")
+local Section = Tab:NewSection("Area Attacks")
+Section:NewKeybind("Agatha Runes", "Spawns Agatha Rune Spell", Enum.KeyCode.F, function()
+	print("You just clicked the bind")
+local args = {
+    [1] = "Runes",
+    [2] = "Begin"
+}
+
+game:GetService("ReplicatedStorage").Events.AgathaEvent:FireServer(unpack(args))
+
+end)
+Section:NewKeybind("Agatha Burst", "Spawns Agatha Burst Spell", Enum.KeyCode.G, function()
+	print("You just clicked the bind")
+local args = {
+    [1] = "Burst"
+}
+
+game:GetService("ReplicatedStorage").Events.AgathaEvent:FireServer(unpack(args))
+
+
+end)
+Section:NewKeybind("Wiccan Burst", "Spawns Wiccan Burst Spell", Enum.KeyCode.J, function()
+	print("You just clicked the bind")
+local args = {
+    [1] = "Burst"
+}
+
+game:GetService("ReplicatedStorage").Events.WiccanEvent:FireServer(unpack(args))
+
+
+
+end)
+Section:NewKeybind("Dark Phoenix Burst", "Spawns Dark Phoenixes Burst Ability", Enum.KeyCode.H, function()
+	print("You just clicked the bind")
+local args = {
+    [1] = "Burst"
+}
+
+game:GetService("ReplicatedStorage").Events.DarkPhoenixEvent:FireServer(unpack(args))
+
+
+
+end)
+local Section = Tab:NewSection("Targeted Attacks")
+Section:NewKeybind("Agatha Siphon", "Target's User With Agatha's Siphon", Enum.KeyCode.T, function()
+	print("You just clicked the bind")
+local function getPlayer()
+local userInput = game:GetService("UserInputService")
+local cam = workspace.CurrentCamera
+local mousePos = userInput:GetMouseLocation()
+local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+players = {}
+for _, x in next, game:GetService('Players'):GetPlayers() do
+players[#players + 1] = x.Character
+end
+local raycastParams = RaycastParams.new()
+raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+raycastParams.FilterDescendantsInstances = players
+raycastParams.IgnoreWater = true
+local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+if raycastResult then
+for _, x in next, game:GetService('Players'):GetPlayers() do
+if not raycastResult.Instance:IsDescendantOf(x.Character) then
+continue 
+end
+return x
+end
+end
+return false
+end
+                                
+local function Set(list)
+local set = {}
+for _, l in ipairs(list) do
+if 1 then
+set[1] = true
+end
+end
+return set
+end
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+if key == "t" then
+local player = getPlayer()
+if player then
+
+local args = {
+    [1] = "Siphon",
+    [2] = player.Character
+}
+
+game:GetService("ReplicatedStorage").Events.AgathaEvent:FireServer(unpack(args))
+
+end
+end
+end)
+end)
+Section:NewKeybind("Wiccan Bolt", "Throws Wiccans Hex Bomb Ability", Enum.KeyCode.R, function()
+	print("You just clicked the bind")
+clicktpon = true                 --- to turn off key function make this false and execute   
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'r' then
+    if mouse.Target then
+    if clicktpon then
+
+
+
+local args = {
+    [1] = "Chaos Bomb",
+    [2] = Vector3.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+}
+
+game:GetService("ReplicatedStorage").Events.WiccanEvent:FireServer(unpack(args))
+ 
+    end
+    end
+    end
+   end)
+
+
+
+
+end)
+Section:NewKeybind("Agatha Dark Bolt", "Throws Agatha's Dark Bolt Ability", Enum.KeyCode.Y, function()
+	print("You just clicked the bind")
+clicktpon = true                 --- to turn off key function make this false and execute   
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'y' then
+    if mouse.Target then
+    if clicktpon then
+
+
+
+local args = {
+    [1] = "Blast",
+    [2] = Vector3.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+}
+
+game:GetService("ReplicatedStorage").Events.AgathaEvent:FireServer(unpack(args))
+ 
+    end
+    end
+    end
+   end)
+
+
+
+
+end)
+Section:NewKeybind("Wanda Hex Bolt", "Throws Wanda's Hex Bolt Ability", Enum.KeyCode.P, function()
+	print("You just clicked the bind")
+clicktpon = true                 --- to turn off key function make this false and execute   
+    plr = game.Players.LocalPlayer
+    hum = plr.Character.HumanoidRootPart
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+    if key == 'p' then
+    if mouse.Target then
+    if clicktpon then
+
+
+
+local args = {
+    [1] = "Blast",
+    [2] = Vector3.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+}
+
+game:GetService("ReplicatedStorage").Events:FindFirstChild("838Event"):FireServer(unpack(args))
+ 
+    end
+    end
+    end
+   end)
+
+
+
+
+end)
+local Section = Tab:NewSection("Passive Abilities")
+Section:NewButton("Wiccan Self Heal", "Regens Caster's Health", function()
+        print("Clicked")
+local args = {
+    [1] = "Heal"
+}
+
+game:GetService("ReplicatedStorage").Events.WiccanEvent:FireServer(unpack(args))
+
+end)
+Section:NewButton("Wanda Self Heal", "Regens Caster's Health", function()
+        print("Clicked")
+local args = {
+    [1] = "Heal"
+}
+
+game:GetService("ReplicatedStorage").Events:FindFirstChild("838Event"):FireServer(unpack(args))
+
+
+end)
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Admin")
+Section:NewButton("Infinite Yield", "Opens Infinite Yield", function()
+        print("Clicked")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+local Section = Tab:NewSection("Made by Klair#4497")
