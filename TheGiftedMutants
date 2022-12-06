@@ -278,5 +278,6 @@ while wait() do
 if P.Character and P.Character.Head.Username then
 P.Character.Head.Username:Destroy()
 end
+end
 end)
 local Section = Tab:NewSection("Made by Klair#4497")
