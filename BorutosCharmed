@@ -1171,3 +1171,15 @@ game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpa
 
 
 end)
+Section:NewButton("Binding Potion", "Put's the Binding Potion In Your Inventory", function()
+        print("Clicked")
+    local args = {
+    [1] = "Binding Potion",
+    [2] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpack(args))
+
+
+
+end)
