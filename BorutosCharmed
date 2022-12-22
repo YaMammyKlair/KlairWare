@@ -1122,3 +1122,52 @@ Section:NewButton("Andy", "Makes you look like Andy", function()
 game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
 
 end)
+local Section = Tab:NewSection("Potions&Spells")
+Section:NewButton("Seer Potion", "Put's Vanquishing Potion for the Seer In Your Inventory", function()
+        print("Clicked")
+    local args = {
+    [1] = "Seer Potion",
+    [2] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpack(args))
+
+
+
+end)
+Section:NewButton("Belthazor Potion", "Put's Vanquishing Potion for Belthazor In Your Inventory", function()
+        print("Clicked")
+    local args = {
+    [1] = "Belthazor Potion",
+    [2] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpack(args))
+
+
+
+end)
+Section:NewButton("Triad Potion", "Put's Vanquishing Potion for the Triad In Your Inventory", function()
+        print("Clicked")
+    local args = {
+    [1] = "Triad Potion",
+    [2] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpack(args))
+
+
+
+end)
+Section:NewButton("Combustion Potion", "Put's the Combustion Potion In Your Inventory", function()
+        print("Clicked")
+    local args = {
+    [1] = "Combustion Potion",
+    [2] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpack(args))
+
+
+
+end)
