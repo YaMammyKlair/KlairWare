@@ -1183,3 +1183,16 @@ game:GetService("ReplicatedStorage").RemoteEvents.PotionPurchase:FireServer(unpa
 
 
 end)
+local Section = Tab:NewSection("Melee")
+Section:NewButton("Cartwheel", "Allows you to spam Cartwheels", function()
+        print("Clicked")
+local args = {
+    [1] = "Cartwheel"
+}
+
+game:GetService("ReplicatedStorage").CombatRemote:FireServer(unpack(args))
+
+
+
+
+end)
