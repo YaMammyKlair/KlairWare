@@ -28,13 +28,4 @@ Section:NewButton("Unlock Zatanna", "Unlocks Zatanna", function()
 game:GetService("ReplicatedStorage").Remotes.CharacterSelection:InvokeServer(unpack(args))
 
 end)
-Section:NewButton("Unlock Zatanna", "Unlocks Zatanna", function()
-        print("Clicked")
-    local args = {
-    [1] = "Zatanna"
-}
-
-game:GetService("ReplicatedStorage").Remotes.CharacterSelection:InvokeServer(unpack(args))
-
-end)
 local Section = Tab:NewSection("Made by Klair#4497")
