@@ -6,7 +6,7 @@ local colors = {
     TextColor = Color3.fromRGB(255,255,255),
     ElementColor = Color3.fromRGB(255,69,69)
 }
-local Window = Library.CreateLib("The Gifted Mutants", colors)
+local Window = Library.CreateLib("Multiversal: Legacies", colors)
 local Tab = Window:NewTab("Main Menu")
 local Section = Tab:NewSection("Gamepasses")
 Section:NewButton("Unlock Wanda", "Unlocks Scarlet Witch", function()
